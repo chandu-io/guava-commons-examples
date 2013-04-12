@@ -13,7 +13,7 @@ import org.apache.commons.lang3.time.DateUtils;
  *
  * @author jaigurusairam
  */
-public enum Demo {
+public enum Ex02GregorianCalendar {
     
     ONE;
     
@@ -48,12 +48,12 @@ public enum Demo {
     }
 
     // setup the class
-    private static final Logger LOGGER = Logger.getLogger(Demo.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Ex02GregorianCalendar.class.getName());
     
     private static void log(final String message, final Object... objects) {
         LOGGER.log(Level.INFO, message, objects);
     }
 
-    private Demo() {}
+    private Ex02GregorianCalendar() {}
     // setup the class
 }
