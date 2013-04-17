@@ -31,19 +31,11 @@ public class GoogleCodeJamTemplate {
     /*
      * This is the solution
      */
-    private static int solve() {
+    private static void solve() {
         T = in.nextInt();
         for (long t = 0; t < T; t += 1) {
             // main logic here
             printResult(t, Long.toString(t));
-        }
-        
-        if (lines != T) {
-            System.err.println("Something went wrong.");
-            System.err.println("Lines printed should be equal to the number of test case.");
-            return 1;
-        } else {
-            return 0;
         }
     }
     
@@ -59,14 +51,12 @@ public class GoogleCodeJamTemplate {
      * Just change the fileName and run the program
      */
     public static void main(final String[] tcs) {
-        int result = 0;
-        
         try {
             
             in = new Scanner(new BufferedReader(new FileReader(fileName + inExt)));
             out = new PrintWriter(new BufferedWriter(new FileWriter(fileName + outExt)));
             
-            result = solve();
+            solve();
             
         } catch (FileNotFoundException ex) {
             System.err.println("[FileNotFoundException] >> " + ex.getMessage());
@@ -81,6 +71,17 @@ public class GoogleCodeJamTemplate {
             if (out != null) {
                 out.close();
             }
+        }
+
+        int result = 0;
+        if (lines != T) {
+            System.err.println("Something went wrong.");
+            System.err.println("Lines printed should be equal to the number of test case.");
+            result = 1;
+        } else {
+            System.out.println("Program executed successfully.");
+            System.out.println("Please check the output file '" + fileName + outExt + "'.");
+            result = 0;
         }
 
         System.exit(result);
