@@ -16,11 +16,12 @@ public enum ConsoleMain {
         System.out.print("First Name: ");
         String firstName = CONSOLE.readLine();
         String lastName = CONSOLE.readLine("Last Name: ");
+        System.out.println("Your full name is " + firstName + " " + lastName);
     }
 
     public static void main(final String[] tcs) {
         if (CONSOLE == null) {
-            log(Level.SEVERE, "CONSOLE is null :(");
+            log(Level.SEVERE, "CONSOLE is null. Run this program from command line.");
             System.exit(1);
         }
         ONE.demo01();
