@@ -1,8 +1,6 @@
 package com.chandu.template;
 
 import java.io.Console;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -13,15 +11,15 @@ public enum ConsoleMain {
     ONE;
     
     private void demo01() {
-        System.out.print("First Name: ");
-        String firstName = CONSOLE.readLine();
-        String lastName = CONSOLE.readLine("Last Name: ");
-        System.out.println("Your full name is " + firstName + " " + lastName);
+        lg("First Name: ");
+        final String firstName = CONSOLE.readLine();
+        final String lastName = CONSOLE.readLine("Last Name: ");
+        log("Your full name is " + firstName + " " + lastName, "-------");
     }
 
     public static void main(final String[] tcs) {
         if (CONSOLE == null) {
-            log(Level.SEVERE, "CONSOLE is null. Run this program from command line.");
+            log("CONSOLE is null. Run this program from command line.");
             System.exit(1);
         }
         ONE.demo01();
@@ -29,14 +27,19 @@ public enum ConsoleMain {
 
     // setup the class
     private static final Console CONSOLE = System.console();
-    private static final Logger LOGGER = Logger.getLogger(ConsoleMain.class.getName());
     
-    private static void log(final String message, final Object... objects) {
-        LOGGER.log(Level.INFO, message, objects);
+    private static void lg(final Object object) {
+        System.out.print(object);
     }
 
-    private static void log(final Level level, final String message, final Object... objects) {
-        LOGGER.log(level, message, objects);
+    private static void log(final Object... objects) {
+        for (Object obj : objects) {
+            System.out.println(obj);
+        }
+    }
+
+    private static void err(final Object object) {
+        System.err.println(object);
     }
 
     private ConsoleMain() {}
