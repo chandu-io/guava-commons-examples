@@ -1,4 +1,4 @@
-package com.chandu.io;
+package com.chandu.template;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author jaigurusairam
+ * @author Chandrasekhar Thotakura
  */
 public enum BasicFileIO {
     
@@ -73,6 +73,10 @@ public enum BasicFileIO {
     
     private static void log(final String message, final Object... objects) {
         LOGGER.log(Level.INFO, message, objects);
+    }
+
+    private static void log(final Level level, final String message, final Object... objects) {
+        LOGGER.log(level, message, objects);
     }
 
     private BasicFileIO() {}
