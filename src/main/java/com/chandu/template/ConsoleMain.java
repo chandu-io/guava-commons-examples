@@ -19,13 +19,13 @@ public enum ConsoleMain {
 
     public static void main(final String[] tcs) {
         if (CONSOLE == null) {
-            log("CONSOLE is null. Run this program from command line.");
+            err("CONSOLE is null. Run this program from command line.");
             System.exit(1);
         }
         ONE.demo01();
     }
 
-    // setup the class
+    // setup the utils
     private static final Console CONSOLE = System.console();
     
     private static void lg(final Object object) {
@@ -41,7 +41,5 @@ public enum ConsoleMain {
     private static void err(final Object object) {
         System.err.println(object);
     }
-
-    private ConsoleMain() {}
-    // setup the class
+    // setup the utils
 }
