@@ -51,10 +51,13 @@ public class GoogleCodeJamTemplate {
      * Just change the fileName and run the program
      */
     public static void main(final String[] tcs) {
+        final String inFileName = fileName + inExt;
+        final String outFileName = fileName + outExt;
+        
         try {
             
-            in = new Scanner(new BufferedReader(new FileReader(fileName + inExt)));
-            out = new PrintWriter(new BufferedWriter(new FileWriter(fileName + outExt)));
+            in = new Scanner(new BufferedReader(new FileReader(inFileName)));
+            out = new PrintWriter(new BufferedWriter(new FileWriter(outFileName)));
             
             solve();
             
@@ -73,17 +76,14 @@ public class GoogleCodeJamTemplate {
             }
         }
 
-        int result = 0;
         if (lines != T) {
             System.err.println("Something went wrong.");
             System.err.println("Lines printed should be equal to the number of test case.");
-            result = 1;
+            System.exit(1);
         } else {
             System.out.println("Program executed successfully.");
-            System.out.println("Please check the output file '" + fileName + outExt + "'.");
-            result = 0;
+            System.out.println("Please check the output file [" + outFileName + "].");
+            System.exit(0);
         }
-
-        System.exit(result);
     }
 }
