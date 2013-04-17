@@ -21,7 +21,11 @@ public class GoogleCodeJamTemplate {
      * This is the solution
      */
     public static void solve(Scanner in, PrintWriter out) {
-        // TODO
+        int T = in.nextInt();
+        for (int testCase = 0; testCase < T; testCase += 1) {
+            // main logic here
+            out.println(in.next());
+        }
     }
     
     // Declare other static methods here
@@ -30,7 +34,7 @@ public class GoogleCodeJamTemplate {
      * Just change the fileName and run the program
      */
     public static void main(String[] tcs) {
-        final String fileName = "A-small",
+        final String fileName = "A-sample",
                 inputExtension = ".in",
                 outputExtension = ".out";
         
