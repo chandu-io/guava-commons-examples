@@ -1,6 +1,5 @@
 package com.chandu.template;
 
-import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,9 +12,8 @@ public enum Main {
     ONE;
     
     private void demo01() {
-        final UUID uuid = UUID.randomUUID();
-        log("{0}", uuid);
-        log(Level.WARNING, "{0}, {1}", uuid, System.currentTimeMillis());
+        log("{0}", System.currentTimeMillis());
+        log(Level.WARNING, "{0}, {1}", System.nanoTime(), System.currentTimeMillis());
     }
 
     public static void main(final String[] tcs) {
