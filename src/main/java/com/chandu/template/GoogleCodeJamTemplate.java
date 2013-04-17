@@ -15,36 +15,44 @@ import java.util.Scanner;
  */
 public class GoogleCodeJamTemplate {
     
-    // Declare variables here
+    private static Scanner in = null;
+    private static PrintWriter out = null;
     
-    /**
+    private static final String fileName = "files/A-sample";
+    private static final String inExt = ".in";
+    private static final String outExt = ".out";
+    
+    private static final String caseNum = "Case #";
+    private static final String colon = ": ";
+    
+    /*
      * This is the solution
      */
-    public static void solve(Scanner in, PrintWriter out) {
-        int T = in.nextInt();
-        for (int testCase = 0; testCase < T; testCase += 1) {
+    private static void solve() {
+        final int T = in.nextInt();
+        for (int t = 0; t < T; t += 1) {
             // main logic here
-            out.println(in.next());
+            printResult(t, Integer.toString(t));
         }
     }
     
-    // Declare other static methods here
+    /*
+     * Print the test case result
+     */
+    private static void printResult(final int testCase, final String result) {
+        out.println(caseNum + (testCase + 1) + colon + result);
+    }
     
     /*
      * Just change the fileName and run the program
      */
-    public static void main(String[] tcs) {
-        final String fileName = "A-sample",
-                inputExtension = ".in",
-                outputExtension = ".out";
-        
-        Scanner scanner = null;
-        PrintWriter printer = null;
+    public static void main(final String[] tcs) {
         try {
-            scanner = new Scanner(new BufferedReader(new FileReader(fileName + inputExtension)));
-            printer = new PrintWriter(new BufferedWriter(new FileWriter(fileName + outputExtension)));
             
-            solve(scanner, printer);
+            in = new Scanner(new BufferedReader(new FileReader(fileName + inExt)));
+            out = new PrintWriter(new BufferedWriter(new FileWriter(fileName + outExt)));
+            
+            solve();
             
         } catch (FileNotFoundException ex) {
             System.err.println("[FileNotFoundException] >> " + ex.getMessage());
@@ -53,11 +61,11 @@ public class GoogleCodeJamTemplate {
         } catch (Exception ex) {
             System.err.println("[Exception] >> " + ex.getMessage());
         } finally {
-            if (printer != null) {
-                printer.close();
+            if (in != null) {
+                in.close();
             }
-            if (scanner != null) {
-                scanner.close();
+            if (out != null) {
+                out.close();
             }
         }
     }
