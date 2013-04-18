@@ -25,15 +25,15 @@ public class GoogleCodeJamTemplate {
     private static final String caseNum = "Case #";
     private static final String colon = ": ";
     
-    private static long T = 0;
-    private static long lines = 0;
+    private static long T = 0L;
+    private static long lines = 0L;
     
     /*
      * This is the solution
      */
     private static void solve() {
         T = in.nextInt();
-        for (long t = 0; t < T; t += 1) {
+        for (long t = 0L; t < T; t += 1) {
             // main logic here
             printResult(t, Long.toString(t));
         }
