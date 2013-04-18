@@ -1,4 +1,4 @@
-package com.chandu.javautil;
+package com.chandu.java.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

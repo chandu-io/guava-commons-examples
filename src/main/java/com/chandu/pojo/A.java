@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.chandu.javautil.pojo;
+package com.chandu.pojo;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

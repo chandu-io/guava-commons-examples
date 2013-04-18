@@ -1,4 +1,4 @@
-package com.chandu.guava;
+package com.chandu.google.guava;
 
 import static com.google.common.base.Preconditions.*;
 import java.util.Arrays;

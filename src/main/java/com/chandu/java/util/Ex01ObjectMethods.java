@@ -1,6 +1,6 @@
-package com.chandu.javautil;
+package com.chandu.java.util;
 
-import com.chandu.javautil.pojo.A;
+import com.chandu.pojo.A;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.lang3.StringUtils;

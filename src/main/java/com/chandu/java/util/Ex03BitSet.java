@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package com.chandu.javautil;
+package com.chandu.java.util;
 
 import java.util.BitSet;
 import java.util.logging.Level;

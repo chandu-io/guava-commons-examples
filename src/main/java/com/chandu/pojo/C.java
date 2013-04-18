@@ -2,19 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.chandu.javautil.pojo;
+package com.chandu.pojo;
 
 /**
  *
  * @author jaigurusairam
  */
-public class B {
+public class C implements Cloneable {
     
     private String value;
-
-    public B() {
-        value = "Hi";
-    }    
+    
+    public C() {
+        value = "Howdy";
+    }
 
     public String getValue() {
         return value;
@@ -22,5 +22,10 @@ public class B {
 
     public void setValue(String value) {
         this.value = value;
+    }
+    
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
